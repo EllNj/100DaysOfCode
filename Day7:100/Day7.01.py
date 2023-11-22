@@ -20,8 +20,7 @@ display = list('_' * len(chosen_word))
 # e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
 for index, letter in enumerate(chosen_word):
     if guess == letter:
-        display.pop(index)
-        display.insert(index, letter)
+        display[index] = letter
     else:
         print('b')
 # TODO 3  Print display and you should see the guessed letter in the correct position
