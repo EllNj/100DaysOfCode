@@ -12,7 +12,7 @@ lives = 6
 # DO-3: - Import the logo from hangman_art.py and print it at the start of the game.
 print(logo)
 # Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 
 # Create blanks
 display = list('_' * len(chosen_word))
@@ -37,7 +37,7 @@ while "_" in display:
         print(guess)
     if lives == 0:
         print(stages[lives])
-        print("You Lost! Better look next time.")
+        print(f"You Lost! Better look next time.\nThe word was {chosen_word}")
         exit()
     print(display)
 print("You got the word! Well Done.")
