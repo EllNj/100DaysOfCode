@@ -51,7 +51,7 @@ def blackJack():
     dealCard(userNum)
     dealCard(userNum)
     print(f"The dealers card is {compNum[0]}")
-    userHand = f"Your cards are: {userNum}"
+    userHand = f"Your cards are: {userNum} Score: {sum(userNum)}"
     userScore = calculateScore(userNum)
     wentBust(userScore)
     print(userHand)
@@ -60,21 +60,22 @@ def blackJack():
         dealCard(userNum)
         userScore = calculateScore(userNum)
         if wentBust(userScore):
-            print(f"Your cards are: {userNum}")
+            print(f"Your cards are: {userNum} Score:{userScore}")
             print("You went Bust \nYou Lose!")
             playAgain()
-        print(f"Your cards are: {userNum}")
+        print(f"Your cards are: {userNum} Score:{userScore}")
         hit = input("Would you like to hit?(y or n)")
     if hit == 'n':
-        while calculateScore(compNum) < 17 and calculateScore(compNum) != 0:
-            print(f"The dealer has: {compNum} and must hit")
+        compScore = calculateScore(compNum)
+        while compScore < 17 and compScore != 0:
+            print(f"The dealer has: {compNum} Score: {compScore}and must hit")
             dealCard(compNum)
         compScore = calculateScore(compNum)
         if wentBust(compScore):
-            print(f"The Dealers cards are: {compNum}")
+            print(f"The Dealers cards are: {compNum} Score:{compScore}")
             print("Dealer went Bust \nYou Win!")
             playAgain()
-        print(f"The Dealer has: {compNum}")
+        print(f"The Dealer has: {compNum} Score: {compScore}")
     compareScore(userScore,compScore)
     playAgain()
 print(logo)
