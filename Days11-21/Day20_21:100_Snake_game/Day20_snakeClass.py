@@ -21,6 +21,7 @@ class Snake:
 
     def add_segment(self, position):
         segment = Turtle(shape='square')
+        segment.shapesize(stretch_len=0.8, stretch_wid=0.8)
         segment.penup()
         segment.goto(x=position, y=0)
         segment.color('white')
