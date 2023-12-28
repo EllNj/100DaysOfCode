@@ -35,13 +35,14 @@ while game_on:
         scoreboard.update_scoreboard()
     # check if hit border
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_on = False
-        scoreboard.game_over()
+        snake.reset()
+        scoreboard.reset_high()
     # check collision with self
     for segment in snake.segments[1:-1]:
         if snake.head.distance(segment) < 10:
-            game_on = False
-            scoreboard.game_over()
+            snake.reset()
+            scoreboard.reset_high()
+
 
 
 
